@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Check if we're in the same directory as the script
+if [ "$PWD" = "$SCRIPT_DIR" ]; then
+    # If we're in the same directory, execute directly
+    python3 main.py "$@"
+else
+    # If we're in a different directory, use the full path
+    python3 "$SCRIPT_DIR/main.py" "$@"
+fi

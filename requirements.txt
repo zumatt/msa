@@ -1,0 +1,8 @@
+pandas
+python-dotenv
+duckduckgo-search
+scholarly
+pyzenodo3
+requests
+odfpy
+inquirer
