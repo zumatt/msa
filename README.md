@@ -9,19 +9,17 @@
 
 </div>
 
-## 📝 Description
-
 Multi-Search Aggregator (MSA) is a powerful tool that combines multiple search engines and data sources into a single, unified interface. It provides efficient and comprehensive search capabilities across various platforms.
 
-## ✨ Features
+## Features
 
-- 🔍 Unified search interface
-- 🌐 Multiple search engine support
-- 📊 Advanced filtering options
-- 🚀 Fast and efficient results
-- 🔒 Secure data handling
+- Unified search interface
+- Multiple search engine support
+- Advanced filtering options
+- Fast and efficient results
+- Secure data handling
 
-## 🚀 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -34,7 +32,7 @@ cd msa
 ./msa install
 ```
 
-## 💻 Usage
+## Usage
 
 Perform a search
 ```bash
@@ -46,7 +44,7 @@ Clean the results
 msa clean
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -56,16 +54,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## Authors
 
 Matteo Subet aka [Zumat](https://github.com/zumatt)
 
 ---
 
-<div align="left" style="font-size: 10px;">
-This work was carried out as part of the doctoral study <span style="font-style: italic; text-decoration: underline;">Integrating Digital Literacy and Open Process Documentation as Design Practices to Support Urban Manufacturing</span> developed by <a href="https://zumat.ch">Matteo Subet</a> in Experimental Sciences and Technology at the <a href="https://uvic.cat">University of Vic - Central University of Catalonia</a>
-</div>
+This work was carried out as part of the doctoral study _Integrating Digital Literacy and Open Process Documentation as Design Practices to Support Urban Manufacturing_ developed by <a href="https://zumat.ch">Matteo Subet</a> in the doctoral programme _Experimental Sciences and Technology_ at the <a href="https://uvic.cat">University of Vic - Central University of Catalonia</a>
