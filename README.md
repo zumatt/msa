@@ -36,12 +36,12 @@ cd msa
 
 Perform a search
 ```bash
-msa search "your-search"
+./msa search "your-search"
 ```
 
 Clean the results
 ```bash
-msa clean
+./msa clean
 ```
 
 ## Contributing
