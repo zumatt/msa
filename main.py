@@ -32,13 +32,20 @@ def create_env_file():
     print("4. Create credentials (API Key)")
     print("5. Go to https://programmablesearchengine.google.com/")
     print("6. Create a new search engine to get your CSE ID")
+    
+    print("\nCORE API:")
+    print("1. Go to https://core.ac.uk/services/api/")
+    print("2. Sign up for an API key")
+    print("3. You will receive an email")
+    print("4. After verifying your email you can copy and use the API key")
 
     # Let user select which APIs to configure
     api_selection = [
         inquirer.Checkbox('apis',
             message="Select APIs to configure (use space to select/deselect, arrow keys to move, enter to confirm)",
             choices=[
-                'Google Search'
+                'Google Search',
+                'CORE API'
             ],
         ),
     ]
@@ -61,6 +68,14 @@ def create_env_file():
             ),
         ])
     
+    if 'CORE API' in selected_apis['apis']:
+        questions.extend([
+            inquirer.Text('core_api_key',
+                message="Enter your CORE API Key",
+                validate=lambda _, x: len(x) > 0
+            ),
+        ])
+    
     try:
         answers = inquirer.prompt(questions)
         if not answers:
@@ -71,6 +86,8 @@ def create_env_file():
             if 'Google Search' in selected_apis['apis']:
                 f.write(f"GOOGLE_API_KEY={answers['google_api_key']}\n")
                 f.write(f"GOOGLE_CSE_ID={answers['google_cse_id']}\n")
+            if 'CORE API' in selected_apis['apis']:
+                f.write(f"CORE_API_KEY={answers['core_api_key']}\n")
         
         print("\n✅ Environment file created successfully!")
         
@@ -80,17 +97,27 @@ def create_env_file():
 def get_tool_selection():
     # Check if API credentials are available
     has_google_creds = os.getenv("GOOGLE_API_KEY") and os.getenv("GOOGLE_CSE_ID")
+    has_core_creds = os.getenv("CORE_API_KEY")
     
     available_tools = {
         "DuckDuckGo": "duckduckgo",
-        #"Google Scholar": "google_scholar",
-        "Zenodo": "zenodo"
+        "Google Scholar": "google_scholar",
+        "Zenodo": "zenodo",
+        "ResearchGate via Google": "researchgate",
+        # "Directory of Open Access Journals": "doaj",
+        # "OpenAIRE": "openaire",
+        "arXiv": "arxiv"
     }
     
     if has_google_creds:
         available_tools["Google"] = "google"
     else:
         available_tools["Google (API Key not found, please run 'install' command before selection)"] = "google"
+        
+    if has_core_creds:
+        available_tools["CORE"] = "core"
+    else:
+        available_tools["CORE (API Key not found, please run 'install' command before selection)"] = "core"
     
     questions = [
         inquirer.Checkbox('tools',

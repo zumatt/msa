@@ -17,11 +17,11 @@ Multi-Search Aggregator (MSA) is a powerful tool that combines multiple search e
 - [x] DuckDuckGo
 - [x] Google Scholar
 - [x] Zenodo
-- [ ] ResearchGate via Google
+- [x] ResearchGate via Google
 - [ ] DOAJ
 - [ ] OpenAIRE
-- [ ] arXiv
-- [ ] CORE
+- [x] arXiv
+- [x] CORE
 - [ ] Crossref
 - [ ] Europe PMC
 
